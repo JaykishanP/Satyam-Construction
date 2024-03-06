@@ -1,11 +1,11 @@
 <?php  
-if( isset($_GET['submit']) ) {
+if( isset($_POST['submit']) ) {
 //getting user data
-$firstName = $_GET['firstName'];
-$fromEmail = $_GET['email'];
-$phone = $_GET['tel'];
-$locationName = $_GET['location'];
-$messageInfo = $_GET['message'];
+$firstName = $_POST['firstName'];
+$fromEmail = $_POST['email'];
+$phone = $_POST['tel'];
+$locationName = $_POST['location'];
+$messageInfo = $_POST['message'];
  
 //Recipient email, Replace with your email Address
 $mailTo = 'sahanalrgowda@gmail.com';
