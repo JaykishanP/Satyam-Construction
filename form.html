@@ -107,5 +107,45 @@
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
  
+<script>
+  $(document).ready(function() {
+    $('#contact').submit(function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Collect form data
+        var formData = {
+            firstName: $('#firstName').val(),
+            email: $('#email').val(),
+            tel: $('#tel').val(),
+            location: $('#location').val(),
+            message: $('#message').val()
+        };
+
+        // Send form data to Formspree endpoint
+        $.ajax({
+            type: 'POST',
+            url: 'https://formspree.io/f/your_form_id_here', // Replace with your Formspree form endpoint
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                // Handle successful form submission
+                // For example, display a success message
+                $('#success-message').text('Thank you! Your message has been sent.');
+                $('#success-message').show();
+                $('#error-message').hide();
+                $('#contact')[0].reset(); // Clear the form
+            },
+            error: function(xhr, status, error) {
+                // Handle form submission error
+                // For example, display an error message
+                $('#error-message').text('Error: Form submission failed. Please try again later.');
+                $('#error-message').show();
+                $('#success-message').hide();
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>
