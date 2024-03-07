@@ -62,9 +62,12 @@
     $('.SendEmail').click(function (event) {
       var email = 'sahanasahana331@gmail.com';
       var subject = 'Quote';
-      var emailBody = 'Name,';
-      var attach = 'path';
+      var emailBody = 'Name:';
+      var mailId = "Email ID";
+      var phone = "Phone Number";
+      var location = "Location of Site";
+      var message = "Message";
       document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody+
-          "?attach="+attach;
+          "&body="+mailId+"&body="+phone+"&body="+location+"&body="+message;
     });
   });
