@@ -60,13 +60,13 @@
 
   $(function () {
     $('.SendEmail').click(function (event) {
-        var email = 'sahanasahana331@gmail.com';
+        var email = 'info@satyam.construction';
         var subject = 'Quote';
-        var name = 'Name:';
-        var mailId = 'Email ID';
-        var phone = 'Phone Number';
-        var location = 'Location of Site';
-        var message = 'Message';
+        var name = 'Name :';
+        var mailId = 'Email ID :';
+        var phone = 'Phone Number :';
+        var location = 'Location of Site :';
+        var message = 'Message : ';
         var emailBody = name + '%0D%0A' + mailId + '%0D%0A' + phone + '%0D%0A' + location + '%0D%0A' + message;
         document.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
     });
