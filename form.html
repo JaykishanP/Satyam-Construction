@@ -1,14 +1,23 @@
-<!-- connect with php file -->
-<?php include 'mail.php'  ?>
- 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Satyam Construction</title>
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Construction, Builders, Building">
+    <meta name="description" content="You dream it, we bild it">
+     <!-- Favicons -->
+     <link href="images/favicon.png" rel="icon">
+     <link href="images/favicon.png" rel="apple-touch-icon">
+     
+    <title>Satyam Construction</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -21,6 +30,8 @@
   </a>
   
   <div class="email-quote-header">
+      <!-- <p class="email"><i class="fa fa-envelope"></i><a href="mailto:info@satyam.construction">info@satyam.construction</a></p> -->
+      <!-- <button class="btn header-button SendEmail">Get a Quote</button> -->
       <p class="email"><i class="fa fa-envelope"></i><a href="mailto:info@satyam.construction">info@satyam.construction</a></p>
       <a href="form.html" class="btn header-button">Get a Quote</a>
   </div>
@@ -36,7 +47,7 @@
     <h1 class="heading"> <span>Inquiry</span></h1>
 
    <div class="container">  
-    <form id="contact" action="mail.php" method="post">
+    <form id="contact" action="https://formspree.io/f/meqyzavo" method="post">
       <div class="row">
    
         <div class="col">
@@ -44,35 +55,35 @@
           <div class="form-fields">
             <label>Full Name</label>
             <div>
-              <input placeholder="First Name" name="firstName" type="text" tabindex="1" required autofocus>
+              <input placeholder="Name" name="Name" type="text" tabindex="1" required autofocus>
             </div>
          </div>
 
          <div class="form-fields">
           <label>Email</label>
           <div>
-            <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
+            <input placeholder="Your Email Address" name="Email" type="email" tabindex="2" required>
           </div>
        </div>
 
        <div class="form-fields">
         <label>Phone Number</label>
         <div>
-          <input placeholder="Your Phone Number" name="tel" type="tel" tabindex="3" required>
+          <input placeholder="Your Phone Number" name="Phone Number" type="tel" tabindex="3" required>
         </div>
       </div>
 
       <div class="form-fields">
         <label>Location of site</label>
         <div>
-          <input type="text" name="location" placeholder="Location of site" tabindex="5" required>
+          <input type="text" name="Location of site" placeholder="Location of site" tabindex="5" required>
         </div>
       </div>
 
       <div class="form-fields">
         <label>Message</label>
         <div>
-          <textarea type="text" name="message" id="message" placeholder="Enter your message" required="required"></textarea>
+          <textarea type="text" name="Message" id="message" placeholder="Enter your message" required="required"></textarea>
         </div>
       </div>
 
@@ -80,14 +91,9 @@
 
      </div>
           
-        <!-- Error display -->
-        <div>
-         <p class="success"> <?php echo $success;  ?> </p>
-         <p class="failed"> <?php echo $failed;  ?> </p>
-        </div>
        
       <fieldset>
-        <button type="submit" class="btn" name="submit" id="contact-submit" data-submit="...Sending">Submit Now</button>
+        <button type="submit" class="btn" id="contact-submit" data-submit="...Sending">Submit Now</button>
       </fieldset>
     </form>
   </div>
@@ -107,45 +113,5 @@
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
  
-<script>
-  $(document).ready(function() {
-    $('#contact').submit(function(e) {
-        e.preventDefault(); // Prevent form submission
-
-        // Collect form data
-        var formData = {
-            firstName: $('#firstName').val(),
-            email: $('#email').val(),
-            tel: $('#tel').val(),
-            location: $('#location').val(),
-            message: $('#message').val()
-        };
-
-        // Send form data to Formspree endpoint
-        $.ajax({
-            type: 'POST',
-            url: 'https://formspree.io/f/your_form_id_here', // Replace with your Formspree form endpoint
-            data: formData,
-            dataType: 'json',
-            success: function(response) {
-                // Handle successful form submission
-                // For example, display a success message
-                $('#success-message').text('Thank you! Your message has been sent.');
-                $('#success-message').show();
-                $('#error-message').hide();
-                $('#contact')[0].reset(); // Clear the form
-            },
-            error: function(xhr, status, error) {
-                // Handle form submission error
-                // For example, display an error message
-                $('#error-message').text('Error: Form submission failed. Please try again later.');
-                $('#error-message').show();
-                $('#success-message').hide();
-            }
-        });
-    });
-});
-</script>
-
 </body>
 </html>
