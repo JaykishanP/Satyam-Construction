@@ -355,6 +355,36 @@ section.form-section {
     border: 1px solid var(--main-color);
     margin: 10px 0;
     font-size: 1.8rem;
+    text-transform: none;
+}
+
+section.thanku-section {
+    padding: 16rem 7%;
+    text-align: center;
+    min-height: 90vh;
+}
+
+.thanku-section h1 {
+    font-size: 42px;
+    line-height: 48px;
+}
+
+.thanku-section p {
+    font-size: 24px;
+    line-height: 30px;
+    padding: 20px 0;
+    text-transform: none;
+}
+
+.thanku-section a {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--main-color);
+    cursor: pointer;
+    font-weight: 600;
 }
 
 /* media queries  */
@@ -422,6 +452,16 @@ section.form-section {
     }
     section.about {
         padding: 4rem 7% 0.4rem;
+    }
+
+    .thanku-section h1 {
+        font-size: 30px;
+        line-height: 27px;
+    }
+
+    .thanku-section p {
+        font-size: 18px;
+        line-height: 22px;
     }
 
 }
